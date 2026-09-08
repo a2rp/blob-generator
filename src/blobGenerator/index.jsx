@@ -112,7 +112,8 @@ export default function BlobGenerator() {
                                 borderRadius,
                                 background,
                             }}
-                            aria-label="Blob preview"
+                            aria-label="Generated blob preview"
+                            role="img"
                         />
                     </div>
                 </section>
@@ -263,9 +264,12 @@ export default function BlobGenerator() {
                     </div>
 
                     {/* developer */}
-                    <div style={{ margin: "15px 10px" }}>
-                        Designed and developed by <a href="https://www.ashishranjan.net" target="_blank" style={{ color: "#000" }}>https://www.ashishranjan.net</a>
-                    </div>
+                    <p className="credit">
+                        Designed and developed by{' '}
+                        <a href="https://www.ashishranjan.net/" target="_blank" rel="noreferrer">
+                            Ashish Ranjan
+                        </a>
+                    </p>
                 </section>
             </div>
         </Styled.Wrapper>

@@ -211,5 +211,16 @@ export const Styled = {
             word-break: break-word;
             user-select: text;
         }
+
+        .credit {
+            margin: 15px 10px 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .credit a {
+            color: var(--accent);
+            font-weight: 700;
+        }
     `,
 };

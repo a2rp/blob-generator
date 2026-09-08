@@ -1,54 +1,42 @@
 # Blob Generator
 
-![alt text](image-1.png)
+A small React and Vite tool for creating organic CSS blob shapes. Adjust the dimensions, corner radii, gradient angle, and colors, then copy the generated CSS.
 
-React-based blob generator UI built with styled-components.
-Generate organic shapes using 8-value border-radius and gradients. Vite-powered and GitHub Pages–ready.
+## Features
 
--   **React Hook Form (RHF) + Yup** validation,
--   image preview & clear,
--   header actions (Verify/Delete),
--   **Toastify** toasts, and
--   **localStorage** draft auto-save/restore.
-    Vite-powered and GitHub Pages–ready.
+- Live blob preview
+- Size, radius, gradient, and color controls
+- Randomize and reset actions
+- Copy-ready CSS output
+- Responsive layout
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Create a production build with `npm run build`. Deploy to GitHub Pages with `npm run deploy`.
 
 ## Links
 
--   **Live:** https://a2rp.github.io/blob-generator/
--   **Repo:** https://github.com/a2rp/blob-generator
+- Live: https://a2rp.github.io/blob-generator/
+- Repository: https://github.com/a2rp/blob-generator
+- Portfolio: https://www.ashishranjan.net/
+- GitHub: https://github.com/a2rp
+- CodePen: https://codepen.io/ash1198
+- LinkedIn: https://www.linkedin.com/in/aashishranjan
+- Facebook: https://www.facebook.com/theash.ashish/
+- YouTube: https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1
+- Email: mailto:ash.ranjan09@gmail.com
 
-## ✨ Features
+## Support
 
--   Two-column layout (left: live preview, right: controls)
--   Controls:
-    -- Size: Width, Height (px)
-    -- Radii: Top-Left, Top-Right, Bottom-Right, Bottom-Left (0–100%)
-    -- Gradient: Angle (0–360°), Color 1, Color 2
--   Copy CSS (multi-line, ready to paste)
--   Randomize presets & Reset to defaults
--   All styles scoped with Styled.js (export const Styled = { Wrapper: styled.div`` })
+- Support: https://a2rp-donation-page.netlify.app/
+- Buy Me a Coffee: https://buymeacoffee.com/a2rp
+- Patreon: https://www.patreon.com/a2rp
 
-## 🧱 Tech Stack
+## Author
 
--   React (Vite)
--   styled-components
-
-## 🚀 Getting Started
-
-```bash
-# clone
-git clone https://github.com/a2rp/blob-generator
-cd blob-generator
-
-# install
-npm i
-
-# dev
-npm run dev
-
-# build
-npm run build
-
-# preview production build
-npm run preview
-```
+Ashish Ranjan, Full-Stack Web Developer
