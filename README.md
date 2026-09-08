@@ -2,6 +2,8 @@
 
 A small React and Vite tool for creating organic CSS blob shapes. Adjust the dimensions, corner radii, gradient angle, and colors, then copy the generated CSS.
 
+![Blob Generator preview](screenshot.png)
+
 ## Features
 
 - Live blob preview
