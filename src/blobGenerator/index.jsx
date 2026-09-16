@@ -212,7 +212,7 @@ export default function BlobGenerator() {
                     {/* Angle + Colors */}
                     <div className="group">
                         <label className="label">
-                            Angle ({angle}°)
+                            Angle ({angle} degrees)
                             <input
                                 type="range"
                                 className="input range"
@@ -266,7 +266,7 @@ export default function BlobGenerator() {
                     {/* developer */}
                     <p className="credit">
                         Designed and developed by{' '}
-                        <a href="https://www.ashishranjan.net/" target="_blank" rel="noreferrer">
+                        <a href="https://www.ashishranjan.net/" target="_blank" rel="noopener noreferrer">
                             Ashish Ranjan
                         </a>
                     </p>
