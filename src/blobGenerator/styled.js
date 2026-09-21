@@ -71,10 +71,6 @@ export const Styled = {
                 width 0.15s ease, height 0.15s ease, transform 0.2s ease;
             will-change: border-radius, width, height, background;
         }
-        .blob:hover {
-            transform: translateY(-1px);
-        }
-
         .right .group {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -169,17 +165,12 @@ export const Styled = {
             border-radius: 10px;
             font-weight: 700;
             cursor: pointer;
-            transition: transform 0.08s ease, box-shadow 0.12s ease,
-                background 0.12s ease, border-color 0.12s ease;
+            transition: border-color 160ms ease, box-shadow 160ms ease, text-shadow 160ms ease;
         }
         .btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(2, 6, 23, 0.06);
-            border-color: #d3d7df;
-        }
-        .btn:active {
-            transform: translateY(0);
-            box-shadow: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 16px rgba(37, 99, 235, 0.18);
+            text-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
         }
         .btn.primary {
             background: var(--accent);
