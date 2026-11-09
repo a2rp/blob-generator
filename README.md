@@ -18,6 +18,8 @@ React 18, Vite, styled-components, React Icons, and CSS.
 
 ## Run locally
 
+Requires Node.js 20.19 or newer.
+
 ```bash
 npm install
 npm run dev
@@ -28,6 +30,12 @@ Build and preview the production version:
 ```bash
 npm run build
 npm run preview
+```
+
+Deploy to the configured GitHub Pages branch:
+
+```bash
+npm run deploy
 ```
 
 Live URL: [a2rp.github.io/blob-generator](https://a2rp.github.io/blob-generator/)

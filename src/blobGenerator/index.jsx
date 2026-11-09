@@ -8,15 +8,21 @@ const DEFAULT = {
     angle: 180,
 };
 
+const defaultDimInputs = () => ({
+    w: String(DEFAULT.dims.w),
+    h: String(DEFAULT.dims.h),
+});
+
 export default function BlobGenerator() {
     const [dims, setDims] = useState(DEFAULT.dims);
+    const [dimInputs, setDimInputs] = useState(defaultDimInputs);
     const [r, setR] = useState(DEFAULT.r);
     const [colors, setColors] = useState(DEFAULT.colors);
     const [angle, setAngle] = useState(DEFAULT.angle);
     const [copied, setCopied] = useState(false);
 
     const borderRadius = useMemo(() => {
-        return `${r.r1}% ${100 - r.r1}% ${100 - r.r3}% ${r.r3}% / ${r.r4}% ${r.r2}% ${100 - r.r2}% ${100 - r.r4}%`;
+        return `${r.r1}% ${r.r2}% ${r.r3}% ${r.r4}%`;
     }, [r]);
 
     const background = useMemo(() => {
@@ -34,9 +40,17 @@ export default function BlobGenerator() {
     }, [dims, borderRadius, background]);
 
     const onDimChange = (key, val) => {
-        const num = clampInt(val, 80, 600);
-        const next = { ...dims, [key]: num };
-        setDims(next);
+        setDimInputs((current) => ({ ...current, [key]: val }));
+
+        if (val === "" || !Number.isFinite(Number(val))) return;
+        const value = clampInt(val, 80, 600);
+        setDims((current) => ({ ...current, [key]: value }));
+    };
+
+    const onDimBlur = (key) => {
+        const value = clampInt(dimInputs[key], 80, 600);
+        setDims((current) => ({ ...current, [key]: value }));
+        setDimInputs((current) => ({ ...current, [key]: String(value) }));
     };
 
     const onRChange = (key, val) => {
@@ -67,13 +81,18 @@ export default function BlobGenerator() {
 
     const resetAll = () => {
         setDims(DEFAULT.dims);
+        setDimInputs(defaultDimInputs());
         setR(DEFAULT.r);
         setColors(DEFAULT.colors);
         setAngle(DEFAULT.angle);
+        setCopied(false);
     };
 
     const randomize = () => {
         const rnd = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+        const nextDims = { w: rnd(160, 480), h: rnd(160, 480) };
+        setDims(nextDims);
+        setDimInputs({ w: String(nextDims.w), h: String(nextDims.h) });
         setR({
             r1: rnd(10, 90),
             r2: rnd(10, 90),
@@ -133,8 +152,10 @@ export default function BlobGenerator() {
                                 className="input number"
                                 min={80}
                                 max={600}
-                                value={dims.w}
+                                value={dimInputs.w}
                                 onChange={(e) => onDimChange("w", e.target.value)}
+                                onBlur={() => onDimBlur("w")}
+                                step={1}
                             />
                         </label>
                         <label className="label">
@@ -144,8 +165,10 @@ export default function BlobGenerator() {
                                 className="input number"
                                 min={80}
                                 max={600}
-                                value={dims.h}
+                                value={dimInputs.h}
                                 onChange={(e) => onDimChange("h", e.target.value)}
+                                onBlur={() => onDimBlur("h")}
+                                step={1}
                             />
                         </label>
                     </div>
